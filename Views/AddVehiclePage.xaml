@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Vehicle_Maintenance_App.Views.AddVehiclePage"
+            Title="Add New Vehicle">
+
+        <VerticalStackLayout Padding="15" Spacing="10">
+        <Label Text="Add New Vehicle" FontSize="22" HorizontalOptions="Center" />
+
+        <Entry x:Name="MakeEntry" Placeholder="Make" Text="{Binding Make}"/>
+        <Entry x:Name="ModelEntry" Placeholder="Model" Text="{Binding Model}"/>
+        <Entry x:Name="YearEntry" Placeholder="Year" Keyboard="Numeric" Text="{Binding Year}"/>
+        <Entry x:Name="NameEntry" Placeholder="Name" Text="{Binding Name}" IsFocused="{Binding IsNameFocused}"/>
+        <Entry x:Name="VinEntry" Placeholder="VIN" Text="{Binding Vin}"/>
+        <Editor x:Name="NotesEditor" Placeholder="Additional Notes" HeightRequest="100" Text="{Binding Notes}"/>
+
+        <Label Text="{Binding ErrorMessage}" FontSize="12" HorizontalOptions="Center" TextColor="Red"/>
+
+        <Button Text="Save Vehicle" Clicked="Save_Click" BackgroundColor="Green" TextColor="White"/>
+        <Button Text="Cancel" Clicked="Cancel_Click" BackgroundColor="Gray" TextColor="White"/>
+    </VerticalStackLayout>
+</ContentPage>
