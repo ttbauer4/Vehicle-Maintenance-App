@@ -30,5 +30,9 @@ namespace Vehicle_Maintenance_App.Configuration
         public const string DatabaseKey = "db";
         public const string CurrentVehicleKey = "CurrentVehicle";
         #endregion
+
+        #region Common Strings
+        public const string NotApplicable = "N/A";
+        #endregion
     }
 }

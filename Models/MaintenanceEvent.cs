@@ -10,7 +10,7 @@ namespace Vehicle_Maintenance_App.Models
         public int VehicleId { get; set; }
         [NotNull]
         public string EventType { get; set; }
-        public string? PartsUsed { get; set; } // encoded as a JSON list w/ each object containing {Name, Number, UnitCost, Quantity}
+        public string? PartsUsed { get; set; } // encoded as a JSON list of Parts w/ each object containing {Name, ModelNumber, UnitCost, Quantity}
         public long? LaborCost { get; set; }
         public string? Description { get; set; }
         [NotNull]

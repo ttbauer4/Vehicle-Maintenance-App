@@ -29,6 +29,7 @@ namespace Vehicle_Maintenance_App.Data
                 await AddVehicleAsync(Constants.AddVehicleObject);
         }
 
+        #region Vehicle
         public Task<int> AddVehicleAsync(Vehicle vehicle)
         {
             return _database.InsertAsync(vehicle);
@@ -49,5 +50,23 @@ namespace Vehicle_Maintenance_App.Data
             // TODO: delete all references first
             return _database.Table<Vehicle>().DeleteAsync(v => v.Id == id);
         }
+        #endregion
+
+        #region MaintenanceEvent
+        public Task<int> AddMaintenanceEventAsync(MaintenanceEvent mEvent)
+        {
+            return _database.InsertAsync(mEvent);
+        }
+
+        public async Task<List<MaintenanceEvent>> GetMaintenanceEventsAsync()
+        {
+            return await _database.Table<MaintenanceEvent>().ToListAsync();
+        }
+
+        public Task<List<MaintenanceEvent>> GetMaintenanceEventsByVehicleIdAsync(int vehicleId)
+        {
+            return _database.Table<MaintenanceEvent>().Where(v => v.VehicleId == vehicleId).ToListAsync();
+        }
+        #endregion
     }
 }

@@ -95,7 +95,7 @@ namespace Vehicle_Maintenance_App.ViewModels
 
         public async Task CreateAndViewMaintenanceReportAsync()
         {
-            string path = _pdfService.GenerateMaintenanceReport(SelectedVehicle);
+            string path = await _pdfService.GenerateMaintenanceReport(SelectedVehicle);
             await _pdfService.Open(path);
         }
     }
